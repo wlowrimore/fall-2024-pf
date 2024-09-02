@@ -5,26 +5,41 @@ const Comp1 = () => {
   return (
     <main className="w-full flex flex-col mx-auto">
       <div className="font-bold uppercase">
-        <h1 className="text-4xl">William Lowrimore</h1>
-        <p className="pl-1 text-lg">Software Engineer</p>
+        <h1 className="text-5xl">William Lowrimore</h1>
+        <p className="pl-1 text-3xl">Software Engineer</p>
       </div>
       <section className="flex">
         <div className="flex gap-x-1 bg-bg-me bg-no-repeat bg-top bg-cover">
-          <div className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 text-white font-bold rounded-l-2xl p-2">
-            <Link href="#">About</Link>
-          </div>
-          <div className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 text-white font-bold p-2">
-            <Link href="#">My Work</Link>
-          </div>
-          <div className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 text-white font-bold p-2">
-            <Link href="#">Skills</Link>
-          </div>
-          <div className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 text-white font-bold p-2">
-            <Link href="#">Contact</Link>
-          </div>
-          <div className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 text-white font-bold rounded-r-md p-2">
-            <Link href="#">Resume</Link>
-          </div>
+          <Link
+            href="#"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 uppercase text-xl font-bold text-white rounded-l-2xl p-2"
+          >
+            About
+          </Link>
+          <Link
+            href="#"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
+          >
+            My Work
+          </Link>
+          <Link
+            href="#"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
+          >
+            Skills
+          </Link>
+          <Link
+            href="#"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
+          >
+            Contact
+          </Link>
+          <Link
+            href="#"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
+          >
+            Resume
+          </Link>
         </div>
         <div className="flex-1 ml-3 space-y-2 bg-gradient-to-b from-neutral-950 to neutral-400 bg-clip-text text-transparent">
           <h1 className="text-6xl font-bold uppercase">Creative</h1>
@@ -39,6 +54,9 @@ const Comp1 = () => {
           <h1 className="text-6xl font-bold uppercase">Reliable</h1>
         </div>
       </section>
+      <h2 className="text-4xl text-neutral-700 font-bold">
+        Web Designs For Modern Times
+      </h2>
     </main>
   );
 };
