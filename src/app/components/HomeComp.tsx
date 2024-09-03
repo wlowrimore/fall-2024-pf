@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import { useState, useEffect } from "react";
 
 const Comp1 = () => {
   return (
@@ -9,6 +11,7 @@ const Comp1 = () => {
         <p className="pl-1 text-3xl">Software Engineer</p>
       </div>
       <section className="flex">
+        {/* Colored Panels */}
         <div className="flex gap-x-1 bg-bg-me bg-no-repeat bg-top bg-cover">
           <Link
             href="#about"
@@ -41,6 +44,8 @@ const Comp1 = () => {
             Resume
           </Link>
         </div>
+
+        {/* Adjective text column */}
         <div className="flex-1 ml-3 space-y-2 bg-gradient-to-b from-neutral-950 to-neutral-100 bg-clip-text text-transparent">
           <h1 className="text-6xl font-bold uppercase">Creative</h1>
           <h1 className="text-6xl font-bold uppercase">Dynamic</h1>
