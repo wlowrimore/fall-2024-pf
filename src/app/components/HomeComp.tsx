@@ -3,7 +3,7 @@ import React from "react";
 
 const Comp1 = () => {
   return (
-    <main className="w-full flex flex-col mx-auto">
+    <main className="w-full min-h-screen flex flex-col mx-auto">
       <div className="font-bold uppercase">
         <h1 className="text-5xl">William Lowrimore</h1>
         <p className="pl-1 text-3xl">Software Engineer</p>
@@ -11,37 +11,37 @@ const Comp1 = () => {
       <section className="flex">
         <div className="flex gap-x-1 bg-bg-me bg-no-repeat bg-top bg-cover">
           <Link
-            href="#"
-            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 uppercase text-xl font-bold text-white rounded-l-2xl p-2"
+            href="#about"
+            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 uppercase text-xl font-bold text-white rounded-l-2xl p-2"
           >
             About
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
           >
             My Work
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:text-neutral-700 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
           >
             Skills
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:text-neutral-700 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
           >
             Contact
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
+            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
           >
             Resume
           </Link>
         </div>
-        <div className="flex-1 ml-3 space-y-2 bg-gradient-to-b from-neutral-950 to neutral-400 bg-clip-text text-transparent">
+        <div className="flex-1 ml-3 space-y-2 bg-gradient-to-b from-neutral-950 to-neutral-100 bg-clip-text text-transparent">
           <h1 className="text-6xl font-bold uppercase">Creative</h1>
           <h1 className="text-6xl font-bold uppercase">Dynamic</h1>
           <h1 className="text-6xl font-bold uppercase">Innovative</h1>
