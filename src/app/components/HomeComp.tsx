@@ -20,7 +20,7 @@ const Comp1 = () => {
             About
           </Link>
           <Link
-            href="#"
+            href="#projects"
             className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
           >
             My Work
