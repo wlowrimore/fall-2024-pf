@@ -68,7 +68,7 @@ const About = () => {
               className="flex items-center gap-1.5 uppercase text-xl text-white font-bold"
             >
               <TfiArrowCircleRight size={38} />
-              <span className="tracking-wider">View | Download Resume</span>
+              <span className="tracking-wider">View Resume</span>
             </Link>
           </div>
         </div>

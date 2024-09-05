@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Memoize from "../../../public/images/site-samples/generate.webp";
@@ -7,8 +10,31 @@ import NextJSLogo from "../../../public/logos/nextJS.png";
 import TailwindLogo from "../../../public/logos/tailwind.png";
 import FirebaseLogo from "../../../public/logos/firebase.png";
 import OpenAILogo from "../../../public/logos/openAI.png";
+import Logo from "./ui/Logo";
+
+interface ProjectProps {
+  id: string;
+  title: string;
+  desc: string;
+  imageUrl: string;
+  githubUrl: string;
+  liveUrl: string;
+  stack: string[];
+}
 
 const Projects = () => {
+  const [projects, setProjects] = useState<ProjectProps[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const res = await fetch("/projects.json");
+      const data = await res.json();
+      setProjects(data);
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <main
       id="projects"
@@ -22,84 +48,68 @@ const Projects = () => {
 
       {/* Featured Projects */}
       <section className="py-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-3">
-          <div className="bg-[#f5f5f5] w-[30rem] rounded-xl shadow-md shadow-neutral-600">
-            <div className="max-w-[30rem] max-h-[20rem] p-4 border-b-0 border-2 border-neutral-800 rounded-t-lg flex flex-col overflow-y-auto">
-              <Image
-                src={Memoize}
-                alt="William Lowrimore"
-                width={500}
-                height={500}
-                className="rounded-md w-full max-h-[32rem]"
-              />
-            </div>
-            <div className="max-w-[30rem] max-h-[70rem] p-4 border-t-0 border-2 border-neutral-800 rounded-b-lg flex flex-col overflow-y-auto">
-              <div className="flex items-center space-x-3 w-full border-b border-neutral-500 py-3">
-                <h1 className="text-3xl text-neutral-950 font-semibold tracking-wide">
-                  Memoize
-                </h1>
-
-                <Image
-                  src={NextJSLogo}
-                  alt="William Lowrimore"
-                  width={500}
-                  height={500}
-                  className="rounded-md w-7 h-7"
-                />
-                <Image
-                  src={TailwindLogo}
-                  alt="William Lowrimore"
-                  width={500}
-                  height={500}
-                  className="rounded-md w-7 h-7"
-                />
-                <Image
-                  src={FirebaseLogo}
-                  alt="William Lowrimore"
-                  width={500}
-                  height={500}
-                  className="rounded-md w-7 h-7 opacity-70"
-                />
-                <Image
-                  src={OpenAILogo}
-                  alt="William Lowrimore"
-                  width={500}
-                  height={500}
-                  className="rounded-md w-7 h-7"
-                />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-3 justify-items-center">
+          {projects.length > 0 &&
+            projects.map((project: ProjectProps) => (
+              <div
+                key={project.id || ""}
+                className="bg-[#f5f5f5] w-[38rem] rounded-xl shadow-md shadow-neutral-600"
+              >
+                <div className="justify-center max-w-[38rem] p-4 flex flex-col overflow-y-auto mt-4">
+                  <Image
+                    src={project.imageUrl}
+                    alt="William Lowrimore"
+                    width={500}
+                    height={500}
+                    className="rounded-md w-full max-h-[32rem] object-cover object-top"
+                  />
+                </div>
+                <div className="max-w-[38rem] max-h-[70rem] p-4 flex flex-col overflow-y-auto">
+                  <div className="flex items-center w-full border-b border-neutral-500 py-3">
+                    <h1 className="w-1/2 text-3xl text-neutral-950 font-semibold tracking-wide">
+                      {project.title || ""}
+                    </h1>
+                    <div className="w-1/2 flex items-center justify-end space-x-2">
+                      {project.stack.map((tech) => (
+                        <Logo key={tech} name={tech} />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="py-4 pr-2 max-h-[10rem] overflow-y-auto mb-4">
+                    <p className="text-neutral-950">{project.desc || ""}</p>
+                  </div>
+                  <section className="flex flex-col pt-1 pb-4 space-y-3 text-xl font-bold">
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-[96%] flex items-center p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
+                    >
+                      <TfiArrowCircleRight size={32} />
+                      <span>View Code</span>
+                    </Link>
+                    <Link
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-[96%] flex items-center p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
+                    >
+                      <TfiArrowCircleRight size={32} />
+                      <span>View Site</span>
+                    </Link>
+                    <Link
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-[96%] flex items-center p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
+                    >
+                      <TfiArrowCircleRight size={32} />
+                      <span>View Resume</span>
+                    </Link>
+                  </section>
+                </div>
               </div>
-              <div className="py-4 space-y-3">
-                <p>
-                  Memoize is an AI powered flashcard generator built with
-                  Next.JS and OpenAI.
-                </p>
-                <p>
-                  The user can sign-up and Sign-in via Google to create a user
-                  session which is stored in a Firestore database. Using AI
-                  technology, the user can generate flashcards on any topic and
-                  store them on the database in their personalized flashcard
-                  deck(s). By using Stripe, I&apos;ve added the availability of
-                  paying with credit card or Google Pay with the option of 3
-                  different packages.
-                </p>
-                {/* <br /> */}
-              </div>
-              <section className="flex flex-col pt-1 pb-4 px-4 space-y-3 text-xl font-bold">
-                <Link href="#" className="flex items-center gap-2">
-                  <TfiArrowCircleRight size={32} />
-                  <span>View Code</span>
-                </Link>
-                <Link href="#" className="flex items-center gap-2">
-                  <TfiArrowCircleRight size={32} />
-                  <span>View Site</span>
-                </Link>
-                <Link href="#" className="flex items-center gap-2">
-                  <TfiArrowCircleRight size={32} />
-                  <span>View Resume</span>
-                </Link>
-              </section>
-            </div>
-          </div>
+            ))}
         </div>
       </section>
     </main>

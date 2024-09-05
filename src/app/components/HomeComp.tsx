@@ -12,34 +12,34 @@ const Comp1 = () => {
       </div>
       <section className="flex">
         {/* Colored Panels */}
-        <div className="flex gap-x-1 bg-bg-me bg-no-repeat bg-top bg-cover">
+        <div className="flex gap-x-[0.15rem] bg-bg-me bg-no-repeat bg-top bg-cover">
           <Link
             href="#about"
-            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 uppercase text-xl font-bold text-white rounded-l-2xl p-2"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[6rem] bg-amber-800 uppercase text-xl font-bold text-white rounded-l-2xl p-2"
           >
             About
           </Link>
           <Link
             href="#projects"
-            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[9rem] bg-red-900 uppercase text-xl font-bold text-white p-2"
           >
             My Work
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:text-neutral-700 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
           >
             Skills
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:text-neutral-700 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
           >
             Contact
           </Link>
           <Link
             href="#"
-            className="opacity-75 cursor-pointer hover:text-neutral-950 hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
+            className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
           >
             Resume
           </Link>
