@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Speedometer from "./ui/Speedometer";
 import { Fade } from "react-awesome-reveal";
 
@@ -11,8 +12,13 @@ const Services = () => {
         className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4 bg-white"
       >
         <div className="w-full">
-          <h1 className="text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
+          <h1 className="flex items-center text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
             My Services
+            <Link href="#">
+              <p className="ml-4 uppercase text-sm bg-[#A92E2E] text-white px-2 rounded-full hover:brightness-125 transition duration-200">
+                View Resume
+              </p>
+            </Link>
           </h1>
         </div>
         <section className="py-6">
@@ -28,8 +34,11 @@ const Services = () => {
             <p className="text-justify">
               While the above mentioned services are my most commonly used, they
               are not the only services I offer. If you would like to to learn
-              more about other services such as SaaS and BaaS, please contact
-              me. I will be happy to help you with any questions you may have.
+              more about other services such as SaaS and BaaS, please{" "}
+              <Link href="#contact" className="text-[#A92E2E] hover:underline">
+                contact me
+              </Link>
+              . I will be happy to help you with any questions you may have.
             </p>
           </div>
         </section>

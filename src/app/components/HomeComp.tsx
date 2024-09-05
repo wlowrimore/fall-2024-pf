@@ -33,7 +33,7 @@ const Comp1 = () => {
               Services
             </Link>
             <Link
-              href="#"
+              href="#contact"
               className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[7rem] bg-amber-600 uppercase text-xl font-bold text-white p-2"
             >
               Contact
