@@ -27,10 +27,10 @@ const Comp1 = () => {
               My Work
             </Link>
             <Link
-              href="#"
+              href="#services"
               className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[16rem] bg-amber-500 uppercase text-xl font-bold text-white p-2"
             >
-              Skills
+              Services
             </Link>
             <Link
               href="#"
