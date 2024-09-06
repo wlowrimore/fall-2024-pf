@@ -7,12 +7,12 @@ import WillBass from "../../../public/images/will-bass.jpg";
 import HikingFam from "../../../public/images/hiking-fam.jpg";
 import { TfiArrowCircleRight } from "react-icons/tfi";
 
-const About = () => {
+const About = ({ id }: { id: string }) => {
   return (
     <Fade cascade damping={0.5} direction="up" triggerOnce>
       <main
         id="about"
-        className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4"
+        className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4 z-1"
       >
         <div className="w-full">
           <h1 className="text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">

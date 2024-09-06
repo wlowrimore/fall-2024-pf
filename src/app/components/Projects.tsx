@@ -17,7 +17,7 @@ interface ProjectProps {
   stack: string[];
 }
 
-const Projects = () => {
+const Projects = ({ id }: { id: string }) => {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
 
   useEffect(() => {

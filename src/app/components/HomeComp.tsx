@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
-const Comp1 = () => {
+const Comp1 = ({ id }: { id: string }) => {
   return (
     <Fade cascade damping={1} duration={1000} triggerOnce>
-      <main className="w-full min-h-screen flex flex-col mx-auto">
+      <main id="/" className="w-full min-h-screen flex flex-col mx-auto">
         <div className="font-bold uppercase">
           <h1 className="text-5xl">William Lowrimore</h1>
           <p className="pl-1 text-3xl">Software Engineer</p>

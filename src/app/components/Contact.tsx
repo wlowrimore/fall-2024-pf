@@ -8,7 +8,7 @@ import { MdEmail } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 
-const Contact = () => {
+const Contact = ({ id }: { id: string }) => {
   return (
     <Fade cascade damping={0.5} duration={2500} triggerOnce>
       <main
