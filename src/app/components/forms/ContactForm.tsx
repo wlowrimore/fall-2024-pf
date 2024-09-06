@@ -1,17 +1,88 @@
 "use client";
 
-import React from "react";
+import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState<string>("");
+  const [errorMsg, setErrorMsg] = useState<string>("");
+  const [formValues, setFormValues] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMsg("");
+    setErrorMsg("");
+
+    const formData = new FormData();
+
+    Object.entries(formValues).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    if (form.current === null) {
+      return;
+    }
+
+    const firstName = formValues.fullName.split(" ")[0];
+
+    emailjs
+      .sendForm("service_fwm5wyc", "template_lg6t5vq", form.current, {
+        publicKey: "xUQdgDRwBEzAA4COR",
+      })
+      .then(
+        () => {
+          setLoading(false);
+          setSuccessMsg(`Thank you, ${firstName}! Your message has been sent.`);
+          setFormValues({
+            fullName: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error: any) => {
+          setLoading(false);
+          setErrorMsg("An error occurred. Please try again later.");
+          console.log(error);
+        }
+      );
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccessMsg("");
+      setErrorMsg("");
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [successMsg, errorMsg]);
+
   return (
-    <form className="space-y-4">
+    <form ref={form} onSubmit={handleSubmit} className="space-y-4">
       <div className="flex flex-col">
         <label htmlFor="full-name" className="font-bold text-neutral-600">
           Full Name
         </label>
         <input
           type="text"
-          id="full-name"
+          name="fullName"
+          value={formValues.fullName}
+          onChange={handleChange}
+          required
           className="w-full border border-neutral-400 outline-none p-2 rounded-lg bg-[#f5f5f5] text-neutral-900"
         />
       </div>
@@ -21,7 +92,10 @@ const ContactForm = () => {
         </label>
         <input
           type="text"
-          id="email"
+          name="email"
+          value={formValues.email}
+          onChange={handleChange}
+          required
           className="w-full border border-neutral-400 outline-none p-2 rounded-lg bg-[#f5f5f5] text-neutral-900"
         />
       </div>
@@ -31,7 +105,10 @@ const ContactForm = () => {
         </label>
         <input
           type="text"
-          id="subject"
+          name="subject"
+          value={formValues.subject}
+          onChange={handleChange}
+          required
           className="w-full border border-neutral-400 outline-none p-2 rounded-lg bg-[#f5f5f5] text-neutral-900"
         />
       </div>
@@ -40,17 +117,33 @@ const ContactForm = () => {
           Message
         </label>
         <textarea
-          id="message"
+          name="message"
+          value={formValues.message}
+          onChange={handleChange}
+          required
           rows={5}
           className="w-full border border-neutral-400 outline-none p-2 rounded-lg bg-[#f5f5f5] text-neutral-900"
         />
       </div>
-      <button
-        type="submit"
-        className="w-fit py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
-      >
-        send message
-      </button>
+      <div className="w-full flex items-center md:space-x-28">
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-fit py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
+        >
+          <span>{loading ? "Sending..." : "send message"}</span>
+        </button>
+        {successMsg && (
+          <span className="text-neutral-800 bg-gradient-to-r py-2 px-4 rounded-full from-green-200 via-green-100 to-green-50 text-xl">
+            {successMsg}
+          </span>
+        )}
+        {errorMsg && (
+          <span className="text-neutral-800 bg-gradient-to-r py-2 px-4 rounded-full from-red-200 via-red-100 to-red-50 text-xl">
+            {errorMsg}
+          </span>
+        )}
+      </div>
     </form>
   );
 };

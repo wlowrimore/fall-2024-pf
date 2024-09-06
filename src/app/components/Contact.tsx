@@ -10,7 +10,7 @@ import { SiLinkedin } from "react-icons/si";
 
 const Contact = ({ id }: { id: string }) => {
   return (
-    <Fade cascade damping={0.5} duration={2500} triggerOnce>
+    <Fade cascade damping={0.5} duration={1000} triggerOnce>
       <main
         id="contact"
         className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4"
