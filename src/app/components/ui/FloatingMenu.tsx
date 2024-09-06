@@ -94,7 +94,9 @@ const FloatingMenu = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/resume/william-lowrimore-fall-2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center gap-3 px-2 w-[5rem]"
                 onMouseEnter={() => setIsHoveringResume(true)}
                 onMouseLeave={() => setIsHoveringResume(false)}

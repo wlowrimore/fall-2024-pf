@@ -21,9 +21,13 @@ const Contact = ({ id }: { id: string }) => {
           </h1>
           <p className="pt-3 text-xl">
             I am always open to new opportunities. Please fel free to reach out
-            to me by either filling out this messaging for, or by clicking one
+            to me by either filling out this messaging form, or by clicking one
             of the contact links provided below.
-            <Link href="#">
+            <Link
+              href="/resume/william-lowrimore-fall-2024.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="ml-4 uppercase text-sm bg-[#A92E2E] text-white px-2 rounded-full hover:brightness-125 transition duration-200">
                 View Resume
               </span>

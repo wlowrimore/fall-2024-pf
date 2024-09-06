@@ -70,7 +70,9 @@ const About = ({ id }: { id: string }) => {
             </p>
             <div className="py-2 pl-2 pr-5 w-fit border-2 border-black rounded-full bg-neutral-800 text-white shadow-md shadow-neutral-600 hover:bg-amber-950/90 transition duration-200">
               <Link
-                href="#"
+                href="/resume/william-lowrimore-fall-2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 uppercase text-xl text-white font-bold"
               >
                 <TfiArrowCircleRight size={38} />

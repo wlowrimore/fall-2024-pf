@@ -96,7 +96,7 @@ const Projects = ({ id }: { id: string }) => {
                         <span>View Site</span>
                       </Link>
                       <Link
-                        href="#"
+                        href="/resume/william-lowrimore-fall-2024.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-[96%] flex items-center p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"

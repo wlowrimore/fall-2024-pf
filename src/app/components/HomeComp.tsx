@@ -39,7 +39,9 @@ const Comp1 = ({ id }: { id: string }) => {
               Contact
             </Link>
             <Link
-              href="#"
+              href="/resume/william-lowrimore-fall-2024.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col max-h-[42rem] w-[12rem] bg-amber-900 uppercase text-xl font-bold text-white rounded-r-md p-2"
             >
               Resume

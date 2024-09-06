@@ -14,7 +14,11 @@ const Services = ({ id }: { id: string }) => {
         <div className="w-full">
           <h1 className="flex items-center text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
             My Services
-            <Link href="#">
+            <Link
+              href="/resume/william-lowrimore-fall-2024.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <p className="ml-4 uppercase text-sm bg-[#A92E2E] text-white px-2 rounded-full hover:brightness-125 transition duration-200">
                 View Resume
               </p>
