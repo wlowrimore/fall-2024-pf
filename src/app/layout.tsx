@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "William Lowrimore",
   description: "William Lowrimore - Software Engineer",
-  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: "/favicon.ico",
   },
