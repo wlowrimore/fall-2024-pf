@@ -36,8 +36,8 @@ const ComponentContainer: React.FC = () => {
       <br />
       <br />
       <br />
-      {/* <Services id="services" /> */}
-      {/* <Contact id="contact" /> */}
+      <Services id="services" />
+      <Contact id="contact" />
     </>
   );
 };

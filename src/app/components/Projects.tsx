@@ -47,7 +47,7 @@ const Projects = ({ id }: { id: string }) => {
       </Fade>
 
       {/* Featured Projects */}
-      <section className="md:py-4">
+      <section className="py-2 md:py-4">
         <Fade cascade damping={0.5} direction="up" triggerOnce>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:py-3 justify-items-center">
             {projects.length > 0 &&
@@ -72,7 +72,11 @@ const Projects = ({ id }: { id: string }) => {
                       </h1>
                       <div className="w-1/2 flex items-center justify-end space-x-2">
                         {project.stack.map((tech) => (
-                          <Logo key={tech} name={tech} />
+                          <Logo
+                            key={tech}
+                            name={tech}
+                            className="w-4 h-4 md:w-6 md:h-6"
+                          />
                         ))}
                       </div>
                     </div>

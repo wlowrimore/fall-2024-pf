@@ -32,6 +32,7 @@ const Speedometer: React.FC<SpeedometerProps> = ({ percentage, title }) => {
         options: {
           cutout: "80%",
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: {
               display: false,
@@ -48,10 +49,11 @@ const Speedometer: React.FC<SpeedometerProps> = ({ percentage, title }) => {
 
   return (
     <main className="relative">
-      <canvas ref={canvasRef} />
+      <canvas ref={canvasRef} className="w-32 h-32" />
       <div className="flex flex-col items-center">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold">
-          {percentage}%<div className="text-lg text-gray-600">{title}</div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center md:text-5xl font-bold">
+          {percentage}%
+          <div className="text-xs md:text-lg text-gray-600">{title}</div>
         </div>
       </div>
     </main>
