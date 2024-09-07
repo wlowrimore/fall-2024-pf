@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import ButtonLoader from "../ui/ButtonLoader";
 
 const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -129,9 +130,9 @@ const ContactForm: React.FC = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-fit py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
+          className="w-[16rem] py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
         >
-          <span>{loading ? "Sending..." : "send message"}</span>
+          <span>{loading ? <ButtonLoader /> : "send message"}</span>
         </button>
         {successMsg && (
           <span className="text-neutral-800 bg-gradient-to-r py-2 px-4 rounded-full from-green-200 via-green-100 to-green-50 text-xl">
