@@ -126,21 +126,21 @@ const ContactForm: React.FC = () => {
           className="w-full border border-neutral-400 outline-none p-2 rounded-lg bg-[#f5f5f5] text-neutral-900"
         />
       </div>
-      <div className="w-full flex items-center md:space-x-28">
+      <div className="w-full flex flex-col md:flex-row items-center md:space-x-28">
         <button
           type="submit"
           disabled={loading}
-          className="w-[16rem] py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
+          className="w-full md:w-[16rem] mb-3 py-4 px-8 uppercase bg-[#A92E2E] text-white text-xl font-bold rounded-lg outline-none hover:brightness-110 transition duration-200"
         >
           <span>{loading ? <ButtonLoader /> : "send message"}</span>
         </button>
         {successMsg && (
-          <span className="text-neutral-800 bg-gradient-to-r py-2 px-4 rounded-full from-green-200 via-green-100 to-green-50 text-xl">
+          <span className="text-neutral-800 bg-gradient-to-r py-1 md:py-2 px-2 md:px-4 rounded-lg md:rounded-full from-green-200 via-green-100 to-green-50 text-xs md:text-xl">
             {successMsg}
           </span>
         )}
         {errorMsg && (
-          <span className="text-neutral-800 bg-gradient-to-r py-2 px-4 rounded-full from-red-200 via-red-100 to-red-50 text-xl">
+          <span className="text-neutral-800 bg-gradient-to-r py-1 md:py-2 px-2 md:px-4 rounded-lg md:rounded-full from-red-200 via-red-100 to-red-50 text-xs md:text-xl">
             {errorMsg}
           </span>
         )}

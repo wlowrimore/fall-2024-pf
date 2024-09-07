@@ -1,5 +1,6 @@
 "use client";
 
+import { useScreen } from "../../hooks/useScreen";
 import ContactForm from "./forms/ContactForm";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
@@ -9,6 +10,8 @@ import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 
 const Contact = ({ id }: { id: string }) => {
+  const { isSmallScreen } = useScreen();
+
   return (
     <Fade cascade damping={0.5} duration={1000} triggerOnce>
       <main
@@ -16,10 +19,10 @@ const Contact = ({ id }: { id: string }) => {
         className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4"
       >
         <div className="w-full mb-16">
-          <h1 className="text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
+          <h1 className="text-xl md:text-3xl pb-2 md:pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
             Contact Me
           </h1>
-          <p className="pt-3 text-xl">
+          <p className="pt-3 md:text-xl">
             I am always open to new opportunities. Please fel free to reach out
             to me by either filling out this messaging form, or by clicking one
             of the contact links provided below.
@@ -28,7 +31,7 @@ const Contact = ({ id }: { id: string }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="ml-4 uppercase text-sm bg-[#A92E2E] text-white px-2 rounded-full hover:brightness-125 transition duration-200">
+              <span className="ml-4 uppercase text-xs md:text-sm bg-[#A92E2E] text-white px-2 rounded-full hover:brightness-125 transition duration-200">
                 View Resume
               </span>
             </Link>
@@ -39,38 +42,40 @@ const Contact = ({ id }: { id: string }) => {
           <div className="flex flex-col text-xl">
             <Link
               href="#"
-              className="py-2 px-2 flex items-center rounded-full gap-2 hover:bg-neutral-300 w-[40%] transition duration-200"
+              className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <MdEmail
-                size={44}
-                className="border-2 border-neutral-600 rounded-full p-2"
+                size={45}
+                className="md:border-2 border-neutral-600 rounded-full p-2"
               />{" "}
-              <span className="font-semibold text-neutral-600">
+              <span className="text-base md:text-lg font-semibold text-neutral-600">
                 wlowrimore@gmail.com
               </span>
             </Link>
             <Link
               href="#"
-              className="py-2 px-2 flex items-center rounded-full gap-2 hover:bg-neutral-300 w-[40%] transition duration-200"
+              className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <SiGithub
                 size={44}
-                className="border-2 border-neutral-600 rounded-full p-2"
+                className="md:border-2 border-neutral-600 rounded-full p-2"
               />{" "}
-              <span className="font-semibold text-neutral-600">
+              <span className="text-base md:text-lg font-semibold text-neutral-600">
                 github.com/wlowrimore
               </span>
             </Link>
             <Link
               href="#"
-              className="py-2 px-2 flex items-center rounded-full gap-2 hover:bg-neutral-300 w-[40%] transition duration-200"
+              className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <SiLinkedin
                 size={44}
-                className="border-2 border-neutral-600 rounded-full p-2"
+                className="md:border-2 border-neutral-600 rounded-full p-2"
               />{" "}
-              <span className="font-semibold text-neutral-600">
-                linkedin.com/in/william-lowrimore-dev
+              <span className="text-base md:text-lg font-semibold text-neutral-600">
+                {isSmallScreen
+                  ? "linkedin.com/in/"
+                  : "linkedin.com/in/william-lowrimore-dev"}
               </span>
             </Link>
           </div>
