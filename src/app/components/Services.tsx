@@ -27,12 +27,12 @@ const Services = ({ id }: { id: string }) => {
         </div>
         <section className="py-2 md:py-6">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-4 py-4 justify-items-center">
-            <Speedometer percentage={98} title="Dynamic UI Development" />
-            <Speedometer percentage={82} title="SEO Conversion" />
-            <Speedometer percentage={64} title="AI Integration" />
-            <Speedometer percentage={90} title="Full Stack Web Development" />
-            <Speedometer percentage={75} title="API Data Integration" />
-            <Speedometer percentage={75} title="API Data Integration" />
+            <Speedometer percentage={98} title="UI Dev" />
+            <Speedometer percentage={82} title="SEO" />
+            <Speedometer percentage={64} title="AI" />
+            <Speedometer percentage={90} title="Web Dev" />
+            <Speedometer percentage={75} title="REST API" />
+            <Speedometer percentage={100} title="Agile Dev" />
           </div>
           <div className="py-6 md:text-2xl text-neutral-600 font-bold md:px-14">
             <p className="md:text-justify">

@@ -38,7 +38,7 @@ const Contact = ({ id }: { id: string }) => {
           </p>
         </div>
         <ContactForm />
-        <section className="mt-12">
+        <section className="">
           <div className="flex flex-col text-xl">
             <Link
               href="#"
@@ -80,7 +80,6 @@ const Contact = ({ id }: { id: string }) => {
             </Link>
           </div>
         </section>
-        <div></div>
       </main>
     </Fade>
   );

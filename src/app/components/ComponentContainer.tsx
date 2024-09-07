@@ -21,13 +21,13 @@ const ComponentContainer: React.FC = () => {
   if (loading === true) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader />;
+        <Loader />
       </div>
     );
   }
 
   return (
-    <>
+    <main className="min-h-screen max-w-screen mx-auto flex flex-col items-center">
       <FloatingMenu />
       <HomeComp id="/" />
       <About id="about" />
@@ -38,7 +38,7 @@ const ComponentContainer: React.FC = () => {
       <br />
       <Services id="services" />
       <Contact id="contact" />
-    </>
+    </main>
   );
 };
 

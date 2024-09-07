@@ -36,7 +36,7 @@ const Projects = ({ id }: { id: string }) => {
   return (
     <main
       id="projects"
-      className="w-screen rounded-2xl max-w-[80rem] min-h-screen flex flex-col mx-auto p-4"
+      className="rounded-2xl max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4"
     >
       <Fade cascade damping={0.5} direction="left" triggerOnce>
         <div className="w-full">
@@ -49,25 +49,25 @@ const Projects = ({ id }: { id: string }) => {
       {/* Featured Projects */}
       <section className="py-2 md:py-4">
         <Fade cascade damping={0.5} direction="up" triggerOnce>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:py-3 justify-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:py-3 justify-items-center">
             {projects.length > 0 &&
               projects.map((project: ProjectProps) => (
                 <div
                   key={project.id || ""}
-                  className="bg-[#f5f5f5] md:w-[38rem] rounded-xl shadow-md shadow-neutral-600"
+                  className="bg-[#f5f5f5] md:w-[28rem] rounded-xl shadow-md shadow-neutral-600"
                 >
-                  <div className="justify-center max-w-[38rem] p-4 flex flex-col overflow-y-auto mt-4">
+                  <div className="justify-center lg:w-[38rem] p-4 flex flex-col overflow-y-auto mt-4">
                     <Image
                       src={project.imageUrl}
                       alt="William Lowrimore"
                       width={500}
                       height={500}
-                      className="rounded-md w-full max-h-[32rem] object-cover object-top"
+                      className="rounded-md sm:w-full md:w-[26rem] max-h-[32rem] object-cover object-top"
                     />
                   </div>
                   <div className="max-w-[38rem] max-h-[70rem] p-4 flex flex-col overflow-y-auto">
                     <div className="flex items-center w-full border-b border-neutral-500 py-3">
-                      <h1 className="w-1/2 text-xl md:text-3xl text-neutral-950 font-semibold tracking-wide">
+                      <h1 className="w-1/2 text-xl md:text-2xl text-neutral-950 font-semibold tracking-wide">
                         {project.title || ""}
                       </h1>
                       <div className="w-1/2 flex items-center justify-end space-x-2">

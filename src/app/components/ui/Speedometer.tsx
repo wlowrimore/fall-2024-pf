@@ -49,11 +49,13 @@ const Speedometer: React.FC<SpeedometerProps> = ({ percentage, title }) => {
 
   return (
     <main className="relative">
-      <canvas ref={canvasRef} className="w-32 h-32" />
+      <canvas ref={canvasRef} className="w-32 h-32 md:w-52 md:h-52" />
       <div className="flex flex-col items-center">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center md:text-5xl font-bold">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center md:text-4xl font-bold">
           {percentage}%
-          <div className="text-xs md:text-lg text-gray-600">{title}</div>
+          <div className="text-xs md:text-lg lg:text-lg text-gray-600">
+            {title}
+          </div>
         </div>
       </div>
     </main>

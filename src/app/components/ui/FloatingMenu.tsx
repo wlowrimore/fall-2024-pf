@@ -35,7 +35,7 @@ const FloatingMenu = () => {
   return (
     <>
       {showMenu && (
-        <nav className="fixed z-50 top-1 right-[39%] mr-2 p-4 bg-neutral-700 text-white text-sm rounded-2xl">
+        <nav className="fixed z-50 top-0 md:top-1 lg:right-[26.5%] mr-2 p-4 bg-[#252a2f] text-white text-sm rounded-2xl">
           <ul className="flex gap-4 w-full">
             <li>
               <Link
