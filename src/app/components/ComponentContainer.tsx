@@ -31,13 +31,13 @@ const ComponentContainer: React.FC = () => {
       <FloatingMenu />
       <HomeComp id="/" />
       <About id="about" />
-      <Projects id="projects" />
+      {/* <Projects id="projects" /> */}
       <br />
       <br />
       <br />
       <br />
-      <Services id="services" />
-      <Contact id="contact" />
+      {/* <Services id="services" /> */}
+      {/* <Contact id="contact" /> */}
     </>
   );
 };
