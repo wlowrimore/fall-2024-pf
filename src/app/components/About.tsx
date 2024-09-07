@@ -18,7 +18,7 @@ const About = ({ id }: { id: string }) => {
         className="w-screen max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto p-4 md:mt-0 -mt-80"
       >
         <div className="w-full">
-          <h1 className="text-xl md:text-3xl pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
+          <h1 className="text-xl md:text-3xl pb-2 md:pb-4 border-b border-neutral-400 uppercase text-neutral-950 font-semibold">
             My Story...
           </h1>
         </div>

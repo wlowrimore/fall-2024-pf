@@ -21,7 +21,7 @@ const Comp1 = ({ id }: { id: string }) => {
           <div className="flex gap-x-[0.15rem] bg-bg-me bg-no-repeat bg-top bg-cover">
             <Link
               href="#about"
-              className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col min-h-[20rem]max-h-[42rem] md:w-[6rem] bg-amber-800 uppercase text-xs md:text-xl font-bold text-white rounded-l-2xl p-2"
+              className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col min-h-[20rem]max-h-[42rem] md:w-[6rem] bg-amber-800 uppercase text-xs md:text-xl font-bold text-white md:rounded-l-2xl p-2"
             >
               About
             </Link>
@@ -47,7 +47,7 @@ const Comp1 = ({ id }: { id: string }) => {
               href="/resume/william-lowrimore-fall-2024.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col min-h-[20rem] max-h-[42rem] md:w-[12rem] bg-amber-900 uppercase text-xs md:text-xl font-bold text-white rounded-r-md p-2"
+              className="opacity-75 cursor-pointer hover:opacity-90 transition duration-200 flex flex-col min-h-[20rem] max-h-[42rem] md:w-[12rem] bg-amber-900 uppercase text-xs md:text-xl font-bold text-white md:rounded-r-md p-2"
             >
               Resume
             </Link>
