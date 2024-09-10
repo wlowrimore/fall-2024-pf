@@ -23,7 +23,7 @@ const Contact = ({ id }: { id: string }) => {
             Contact Me
           </h1>
           <p className="pt-3 md:text-xl">
-            I am always open to new opportunities. Please fel free to reach out
+            I am always open to new opportunities. Please feel free to reach out
             to me by either filling out this messaging form, or by clicking one
             of the contact links provided below.
             <Link
@@ -41,7 +41,7 @@ const Contact = ({ id }: { id: string }) => {
         <section className="">
           <div className="flex flex-col text-xl">
             <Link
-              href="#"
+              href="mailto://wlowrimore@gmail.com"
               className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <MdEmail
@@ -53,7 +53,9 @@ const Contact = ({ id }: { id: string }) => {
               </span>
             </Link>
             <Link
-              href="#"
+              href="https://github.com/wlowrimore"
+              target="_blank"
+              rel="noopener noreferrer"
               className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <SiGithub
@@ -65,7 +67,9 @@ const Contact = ({ id }: { id: string }) => {
               </span>
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/in/william-lowrimore-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="md:py-2 px-2 flex items-center rounded-full md:gap-2 hover:bg-neutral-300 w-full md:w-[40%] transition duration-200"
             >
               <SiLinkedin
@@ -74,7 +78,7 @@ const Contact = ({ id }: { id: string }) => {
               />{" "}
               <span className="text-base md:text-lg font-semibold text-neutral-600">
                 {isSmallScreen
-                  ? "linkedin.com/in/"
+                  ? "william-lowrimore-dev"
                   : "linkedin.com/in/william-lowrimore-dev"}
               </span>
             </Link>
