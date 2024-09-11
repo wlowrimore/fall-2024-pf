@@ -85,19 +85,6 @@ const Projects = ({ id }: { id: string }) => {
                     </div>
                     <section className="flex flex-col pt-1 pb-4 space-y-3 md:text-xl font-bold">
                       <Link
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-[96%] flex items-center md:p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
-                      >
-                        {isSmallScreen ? (
-                          <TfiArrowCircleRight size={24} />
-                        ) : (
-                          <TfiArrowCircleRight size={32} />
-                        )}
-                        <span>View Code</span>
-                      </Link>
-                      <Link
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -111,7 +98,7 @@ const Projects = ({ id }: { id: string }) => {
                         <span>View Site</span>
                       </Link>
                       <Link
-                        href="/resume/william-lowrimore-fall-2024.pdf"
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-[96%] flex items-center md:p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
@@ -121,7 +108,7 @@ const Projects = ({ id }: { id: string }) => {
                         ) : (
                           <TfiArrowCircleRight size={32} />
                         )}
-                        <span>View Resume</span>
+                        <span>View Code</span>
                       </Link>
                     </section>
                   </div>
