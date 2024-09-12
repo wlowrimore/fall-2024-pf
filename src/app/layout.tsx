@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import GoogleAnalytics from "../_compontents/GoogleAnalytics";
+// import GoogleAnalytics from "../_compontents/GoogleAnalytics";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Poppins as Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -36,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="w-screen">
-      <GoogleAnalytics />
+      <GoogleAnalytics gaId="G-S4JQ23H9QC" />
       <body className={inter.className}>
         {children}
         <Footer />
