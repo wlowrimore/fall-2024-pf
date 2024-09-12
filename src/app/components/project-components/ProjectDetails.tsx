@@ -49,7 +49,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative max-w-[38rem] max-h-[70rem] p-4 flex flex-col overflow-y-auto justify-center"
+      className="relative max-w-[24rem] lg:max-w-[38rem] max-h-[70rem] p-4 flex flex-col md:overflow-y-auto justify-center"
     >
       <div className="flex items-center  border-b border-neutral-500 pt-3 pb-1">
         <div className="flex items-center justify-between w-full">
@@ -76,12 +76,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </span>
         </p>
       </div>
-      <section className="w-[28rem] flex items-center md:text-xl font-bold py-4">
+      <section className="w-[28rem] flex flex-col md:flex-row items-start md:items-center md:text-xl font-bold py-4">
         <Link
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-[12rem] flex items-center p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
+          className="w-[12rem] flex items-center py-3 md:p-3 rounded-full gap-2 hover:bg-neutral-300 transition duration-200"
         >
           {isSmallScreen ? (
             <TfiArrowCircleRight size={24} />

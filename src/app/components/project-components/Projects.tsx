@@ -34,7 +34,7 @@ const Projects = ({ id }: { id: string }) => {
   return (
     <main
       id="projects"
-      className="rounded-2xl max-w-[50rem]  md:max-w-[80rem] flex flex-col justify-center items-center mx-auto px-4 pt-24"
+      className="rounded-2xl w-[24rem] md:w-[80rem] md:-ml-[15rem] flex flex-col justify-center md:justify-start mx-auto px-4 pt-24"
     >
       <Fade cascade damping={0.5} direction="left" triggerOnce>
         <div className="w-full">
@@ -45,7 +45,7 @@ const Projects = ({ id }: { id: string }) => {
       </Fade>
 
       {/* Featured Projects */}
-      <section className="max-w-[78rem] md:w-[78rem] pt-4">
+      <section className="w-[24rem] pr-8 md:pr-0 md:w-[80rem] lg:w-[78rem] pt-4">
         <Fade cascade damping={0.5} direction="up" triggerOnce>
           <div className="flex flex-col gap-6 lg:gap-12 md:py-3 justify-items-center">
             {projects.length > 0 &&
