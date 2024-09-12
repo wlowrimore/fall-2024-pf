@@ -19,10 +19,6 @@ export interface ProjectProps {
 
 const Projects = ({ id }: { id: string }) => {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
-  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
-    null
-  );
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isSmallScreen } = useScreen();
 
   useEffect(() => {
@@ -35,19 +31,10 @@ const Projects = ({ id }: { id: string }) => {
     fetchProjects();
   }, []);
 
-  const handleModalOpen = (project: ProjectProps) => {
-    setSelectedProject(project);
-    setIsOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setIsOpen(false);
-  };
-
   return (
     <main
       id="projects"
-      className="rounded-2xl max-w-[80rem] min-h-screen flex flex-col justify-center mx-auto px-4 pt-24"
+      className="rounded-2xl max-w-[80rem] flex flex-col justify-center items-center mx-auto px-4 pt-24"
     >
       <Fade cascade damping={0.5} direction="left" triggerOnce>
         <div className="w-full">
@@ -77,10 +64,6 @@ const Projects = ({ id }: { id: string }) => {
                       <ProjectDetails
                         project={project}
                         isSmallScreen={isSmallScreen}
-                        onModalOpen={() => handleModalOpen(project)}
-                        isOpen={isOpen}
-                        onModalClose={handleModalClose}
-                        selectedProject={selectedProject}
                       />
                     </>
                   ) : (
@@ -88,10 +71,6 @@ const Projects = ({ id }: { id: string }) => {
                       <ProjectDetails
                         project={project}
                         isSmallScreen={isSmallScreen}
-                        onModalOpen={() => handleModalOpen(project)}
-                        isOpen={isOpen}
-                        onModalClose={handleModalClose}
-                        selectedProject={selectedProject}
                       />
                       <ProjectImage project={project} />
                     </>
