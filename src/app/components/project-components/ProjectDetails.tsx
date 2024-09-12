@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ProjectProps } from "../project-components/Projects";
+import { Fade } from "react-awesome-reveal";
 import Link from "next/link";
 
 import Logo from "../ui/Logo";
@@ -18,39 +19,20 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   isSmallScreen,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const descriptionRef = useRef<HTMLDivElement>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleOverlayId, setVisibleOverlayId] = useState<string | null>(null);
+  const projectId = project.id;
+  const handleShowFullDescription = (projectId: string): void => {
+    setVisibleOverlayId(projectId);
+    setIsOpen(true);
+  };
 
-  const onModalOpen = () => setIsOpen(true);
-  const onModalClose = () => setIsOpen(false);
-
-  useEffect(() => {
-    if (
-      isOpen &&
-      descriptionRef.current &&
-      modalRef.current &&
-      containerRef.current
-    ) {
-      const descRect = descriptionRef.current.getBoundingClientRect();
-      const containerRect = containerRef.current.getBoundingClientRect();
-
-      const topOffset = descRect.top - containerRect.top - 95;
-      const leftOffset = descRect.left - containerRect.left;
-
-      modalRef.current.style.position = "absolute";
-      modalRef.current.style.top = `${topOffset}px`;
-      modalRef.current.style.left = `${leftOffset}px`;
-      modalRef.current.style.width = `${descRect.width}px`;
-      modalRef.current.style.maxHeight = `${window.innerHeight - topOffset}px`; // 20px buffer
-    }
-  }, [isOpen]);
+  const handleCloseFullDescription = (): void => {
+    setVisibleOverlayId(null);
+    setIsOpen(false);
+  };
 
   return (
-    <div
-      ref={containerRef}
-      className="relative max-w-[24rem] lg:max-w-[38rem] max-h-[70rem] p-4 flex flex-col md:overflow-y-auto justify-center"
-    >
+    <div className="relative max-w-[24rem] lg:max-w-[38rem] max-h-[70rem] p-4 flex flex-col md:overflow-y-auto justify-center">
       <div className="flex items-center  border-b border-neutral-500 pt-3 pb-1">
         <div className="flex items-center justify-between w-full">
           <div>
@@ -65,12 +47,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </div>
         </div>
       </div>
-      <div ref={descriptionRef} className="pt-1">
+      <div className="pt-1">
         <p className="text-neutral-950">
           {project.desc || ""}
           <span
-            onClick={onModalOpen}
-            className="text-[#A92E2E] cursor-pointer hover:text-neutral-950 hover:underline transition duration-200"
+            className="text-red-500 font-semibold tracking-wider cursor-pointer hover:text-neutral-950 hover:underline transition duration-500"
+            onClick={handleShowFullDescription.bind(null, projectId)}
           >
             ...read more
           </span>
@@ -107,22 +89,22 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
       {/* Modal */}
       {isOpen && (
-        <div
-          ref={modalRef}
-          className="absolute z-50 bg-white shadow-lg rounded-lg p-4 overflow-auto"
-        >
-          <div className="w-full flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold">{project.title || ""}</h2>
-            <button
-              onClick={onModalClose}
-              className="text-2xl hover:bg-neutral-300 rounded-full p-2 transition duration-200"
-            >
-              <AiOutlineClose />
-            </button>
-          </div>
-          <div className="overflow-y-auto">
-            <p className="text-neutral-700">{project.xtdesc || ""}</p>
-          </div>
+        <div className="absolute z-50 bg-neutral-950/80 text-white shadow-lg rounded-lg p-4 overflow-auto">
+          <Fade damping={0.5} duration={500} triggerOnce>
+            <div className="w-full flex justify-between items-center mb-1">
+              <h2 className="text-2xl font-bold">{project.title || ""}</h2>
+              <button
+                onClick={handleCloseFullDescription}
+                className="text-2xl hover:bg-neutral-600 rounded-full p-2"
+              >
+                <AiOutlineClose />
+              </button>
+            </div>
+            <div className="w-full h-[0.025rem] bg-neutral-400 rounded-xl"></div>
+            <div className="overflow-y-auto mt-2">
+              <p className="text-white">{project.xtdesc || ""}</p>
+            </div>
+          </Fade>
         </div>
       )}
     </div>
