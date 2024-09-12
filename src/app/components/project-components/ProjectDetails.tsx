@@ -42,9 +42,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
       modalRef.current.style.top = `${topOffset}px`;
       modalRef.current.style.left = `${leftOffset}px`;
       modalRef.current.style.width = `${descRect.width}px`;
-      modalRef.current.style.maxHeight = `${
-        window.innerHeight - topOffset - 20
-      }px`; // 20px buffer
+      modalRef.current.style.maxHeight = `${window.innerHeight - topOffset}px`; // 20px buffer
     }
   }, [isOpen]);
 
@@ -53,7 +51,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
       ref={containerRef}
       className="relative max-w-[38rem] max-h-[70rem] p-4 flex flex-col overflow-y-auto justify-center"
     >
-      <div className="flex items-center w-full border-b border-neutral-500 pt-3 pb-1">
+      <div className="flex items-center  border-b border-neutral-500 pt-3 pb-1">
         <div className="flex items-center justify-between w-full">
           <div>
             <h1 className="text-xl md:text-2xl text-neutral-950 font-semibold tracking-wide">
