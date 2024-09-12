@@ -26,7 +26,7 @@ const ProjectImage = ({ project }: { project: ProjectProps }) => {
             width={500}
             height={500}
             onClick={handleShowLargeImage.bind(null, project.id)}
-            className="rounded-md sm:w-full max-h-[12rem] object-cover object-top overflow-hidden hover:opacity-80 hover:border border-[#F8B648] transition-all ease-in-out durattion-300"
+            className="rounded-md sm:w-full max-h-[11rem] object-cover object-top overflow-hidden hover:opacity-80 hover:border border-[#F8B648] transition-all ease-in-out durattion-300"
           />
         </div>
       </div>
