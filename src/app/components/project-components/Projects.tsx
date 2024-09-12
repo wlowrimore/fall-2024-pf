@@ -34,7 +34,7 @@ const Projects = ({ id }: { id: string }) => {
   return (
     <main
       id="projects"
-      className="rounded-2xl max-w-[80rem] flex flex-col justify-center items-center mx-auto px-4 pt-24"
+      className="rounded-2xl max-w-[70rem] flex flex-col justify-center items-center mx-auto px-4 pt-24"
     >
       <Fade cascade damping={0.5} direction="left" triggerOnce>
         <div className="w-full">
