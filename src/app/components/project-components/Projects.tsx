@@ -58,17 +58,17 @@ const Projects = ({ id }: { id: string }) => {
       </Fade>
 
       {/* Featured Projects */}
-      <section className="max-w-[78rem] w-[78rem] pt-4">
+      <section className="max-w-[78rem] md:w-[78rem] pt-4">
         <Fade cascade damping={0.5} direction="up" triggerOnce>
           <div className="flex flex-col gap-6 lg:gap-12 md:py-3 justify-items-center">
             {projects.length > 0 &&
               projects.map((project: ProjectProps, index: number) => (
                 <div
                   key={project.id || ""}
-                  className={`flex max-h-[20rem] justify-between rounded-xl shadow-md shadow-neutral-600 ${
+                  className={`flex flex-col justify-center md:flex-row h-[30rem] md:max-h-[20rem] md:justify-between rounded-xl shadow-md shadow-neutral-600 ${
                     index % 2 === 0
-                      ? "bg-gradient-to-r from-neutral-700 to-[#f5f5f5] pr-12"
-                      : "bg-gradient-to-l from-neutral-700 to-[#f5f5f5] pl-12"
+                      ? "bg-gradient-to-b md:bg-gradient-to-r from-neutral-700 to-[#f5f5f5] md:pr-12"
+                      : "bg-gradient-to-t md:bg-gradient-to-l from-neutral-700 to-[#f5f5f5] md:pl-12"
                   }`}
                 >
                   {index % 2 === 0 ? (
