@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import HomeComp from "../components/HomeComp";
 import About from "../components/About";
-import Projects from "../components/Projects";
+import Projects from "./project-components/Projects";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
 import FloatingMenu from "./ui/FloatingMenu";

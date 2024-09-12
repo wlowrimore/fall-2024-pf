@@ -3,7 +3,8 @@
     "id": "p1",
     "title": "Memoize",    
     "imageUrl": "/images/site-samples/generate.webp",
-    "desc": "Memoize is an AI powered flashcard generator built with Next.JS and OpenAI.  With this app, the user can signUp and signIn via Google to create a user session which is stored in a Firestore database. Using AI technology, the user can generate flashcards on any topic and store them on the database in their personalized flashcard deck(s).  By using Stripe, I've added the availability of paying with credit card or Google Pay with the option of 3 different packages.",
+    "desc": "Memoize is an AI powered flashcard generator built with Next.JS, TailwindCSS, Firebase, OpenAI, and Stripe",
+    "xtdesc": "Memoize is an AI powered flashcard generator built with Next.JS and OpenAI.  With this app, the user can signUp and signIn via Google to create a user session which is stored in a Firestore database. Using AI technology, the user can generate flashcards on any topic and store them on the database in their personalized flashcard deck(s).  By using Stripe, I've added the availability of paying with credit card or Google Pay with the option of 3 different packages.",
     "githubUrl": "https://github.com/wlowrimore/hs_p4_flashcards",
     "liveUrl": "https://memoize-six.vercel.app/",
     "stack": ["nextjs", "tailwind", "firebase", "openai", "stripe"]
@@ -12,7 +13,8 @@
     "id": "p2",
     "title": "News Link Now",
     "imageUrl": "/images/site-samples/news-link-now.webp",
-    "desc": "This application features up-to-date news articles that are fetched directly from the NewYork Times API.  News Link Now is mobile responsive ( by way of TailwindCSS ).  News articles can be found on all topics coverd by the New York Times.  Furthermore, I have included the ability to search via a search ( popup ) modal that uses the search endpoint of the API.  News Link Now is SEO Compliant, including detailed metadata for every page.  You will find lots of dynamic goodies in this application, with more to come.  As for now, enjoy this app as it puts the latest news within your reach.",
+    "desc": "News Link Now is a news aggregator built with Next.JS, TailwindCSS, and NewYorkTimesAPI",
+    "xtdesc": "This application features up-to-date news articles that are fetched directly from the NewYork Times API.  News Link Now is mobile responsive ( by way of TailwindCSS ).  News articles can be found on all topics coverd by the New York Times.  Furthermore, I have included the ability to search via a search ( popup ) modal that uses the search endpoint of the API.  News Link Now is SEO Compliant, including detailed metadata for every page.  You will find lots of dynamic goodies in this application, with more to come.  As for now, enjoy this app as it puts the latest news within your reach.",
     "githubUrl": "https://github.com/wlowrimore/all_news",
     "liveUrl": "https://news-link-now.vercel.app/",
     "stack": ["nextjs", "tailwind", "newyorktimesapi"]
@@ -21,7 +23,8 @@
     "id": "p3",
     "title": "UniComp AI",
     "imageUrl": "/images/site-samples/unicomp.webp",
-    "desc": "UniComp AI is project 5 of my fellowship with Headstarters.  This application uses OpenAI which is given a system prompt to use specific search parameters.  Users looking for top-ranked professors can log on using Next Auth's Google Provider, and query the chatbot for specific Universities, Subjects and their respective Profssors to see ratings uploaded by real students with real experience.  Students who have experience with certain Universities and their professors can visit the directory page to contribut to the app with their own reviews and ratings",
+    "desc": "UniComp AI is a professor rating application built on a PostgreSQL database that renders AI sourced information in a NextJS Framework",
+    "xtdesc": "UniComp AI is project 5 of my fellowship with Headstarters.  This application uses OpenAI which is given a system prompt to use specific search parameters.  Users looking for top-ranked professors can log on using Next Auth's Google Provider, and query the chatbot for specific Universities, Subjects and their respective Profssors to see ratings uploaded by real students with real experience.  Students who have experience with certain Universities and their professors can visit the directory page to contribut to the app with their own reviews and ratings",
     "githubUrl": "https://github.com/wlowrimore/rate-my-professor-ai-assistant",
     "liveUrl": "https://unicomp-ai.vercel.app/",
     "stack": ["nextjs", "tailwind", "openai", "prisma", "postgres"]
@@ -30,7 +33,8 @@
     "id": "p4",
     "title": "KAL AI CS",
     "imageUrl": "/images/site-samples/kal.webp",
-    "desc": "KAL is an AI powered customer assistant chat bot.  Users signIn with the Next Auth Google Provider. They will then be prompted to submit the type of assistance they are needing along with the location where they need it.  After they have submitted this information, they can then begin asking the assistant about specifics of their problem.  The bot will then provide them with answers best relating to the user's query.",
+    "desc": "KAL is an AI powered customer assistant chat bot with no database. Built in the NextJS Framework, it has no database, only local state.",
+    "xtdesc": "KAL is an AI powered customer assistant chat bot.  Users signIn with the Next Auth Google Provider. They will then be prompted to submit the type of assistance they are needing along with the location where they need it.  After they have submitted this information, they can then begin asking the assistant about specifics of their problem.  The bot will then provide them with answers best relating to the user's query.",
     "githubUrl": "https://github.com/wlowrimore/hs_p3_chatbot",
     "liveUrl": "https://unicomp-ai.vercel.app/",
     "stack": ["nextjs", "tailwind", "openai"]
