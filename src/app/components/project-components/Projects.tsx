@@ -10,6 +10,7 @@ export interface ProjectProps {
   id: string;
   title: string;
   desc: string;
+  xtdesc: string;
   imageUrl: string;
   githubUrl: string;
   liveUrl: string;
@@ -18,6 +19,10 @@ export interface ProjectProps {
 
 const Projects = ({ id }: { id: string }) => {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
+  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
+    null
+  );
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isSmallScreen } = useScreen();
 
   useEffect(() => {
@@ -29,6 +34,15 @@ const Projects = ({ id }: { id: string }) => {
 
     fetchProjects();
   }, []);
+
+  const handleModalOpen = (project: ProjectProps) => {
+    setSelectedProject(project);
+    setIsOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <main
@@ -63,6 +77,10 @@ const Projects = ({ id }: { id: string }) => {
                       <ProjectDetails
                         project={project}
                         isSmallScreen={isSmallScreen}
+                        onModalOpen={() => handleModalOpen(project)}
+                        isOpen={isOpen}
+                        onModalClose={handleModalClose}
+                        selectedProject={selectedProject}
                       />
                     </>
                   ) : (
@@ -70,6 +88,10 @@ const Projects = ({ id }: { id: string }) => {
                       <ProjectDetails
                         project={project}
                         isSmallScreen={isSmallScreen}
+                        onModalOpen={() => handleModalOpen(project)}
+                        isOpen={isOpen}
+                        onModalClose={handleModalClose}
+                        selectedProject={selectedProject}
                       />
                       <ProjectImage project={project} />
                     </>
