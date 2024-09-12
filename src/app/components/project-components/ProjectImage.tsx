@@ -46,8 +46,8 @@ const ProjectImage = ({ project }: { project: ProjectProps }) => {
               <Image
                 src={project.imageUrl}
                 alt="William Lowrimore"
-                width={500}
-                height={500}
+                width={1000}
+                height={1000}
                 className="rounded-md sm:w-full object-cover"
               />
             </div>
