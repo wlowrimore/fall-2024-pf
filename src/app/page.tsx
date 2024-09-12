@@ -15,11 +15,6 @@ export const metadata: Metadata = {
     siteName: "William Lowrimore",
     images: [
       {
-        url: "/home/wlowrimore/ME/fall-2024-pf/public/favicon.ico",
-        width: 96,
-        height: 96,
-      },
-      {
         url: "https://github.com/wlowrimore.png",
         width: 1920,
         height: 1080,
