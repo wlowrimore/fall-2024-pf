@@ -31,12 +31,12 @@
   },
   {
     "id": "p4",
-    "title": "KAL AI CS",
-    "imageUrl": "/images/site-samples/kal.webp",
-    "desc": "KAL is an AI powered customer assistant chat bot with no database. Built in the NextJS Framework, it has no database, only local state.",
-    "xtdesc": "KAL is an AI powered customer assistant chat bot.  Users signIn with the Next Auth Google Provider. They will then be prompted to submit the type of assistance they are needing along with the location where they need it.  After they have submitted this information, they can then begin asking the assistant about specifics of their problem.  The bot will then provide them with answers best relating to the user's query.",
-    "githubUrl": "https://github.com/wlowrimore/hs_p3_chatbot",
-    "liveUrl": "https://unicomp-ai.vercel.app/",
+    "title": "YC Find",
+    "imageUrl": "/images/site-samples/yc-find.webp",
+    "desc": "YC Find is a Next.js application that allows users to create / search for startups and view their details",
+    "xtdesc": "YC Find is a Next.js application that allows users to create / search for startups and view their details. It uses the Sanity.io Content Studio to manage the data and the Next.js framework to build the application.",
+    "githubUrl": "https://github.com/wlowrimore/get_cozy_w_nextjs_v15",
+    "liveUrl": "https://get-cozy-w-nextjs-v15.vercel.app/",
     "stack": ["nextjs", "tailwind", "openai"]
   }
 ]
